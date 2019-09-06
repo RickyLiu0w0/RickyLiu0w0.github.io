@@ -85,6 +85,8 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
+    <!--浏览器标题变化-->
+    <script type="text/javascript" src="/js/funnyTitle.js"></script>
 </head>
 <body class="is-3-column">
     <nav class="navbar navbar-main">
@@ -210,6 +212,27 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'y3g5VWupwWftyhlBzIrcfglB-gzGzoHsz',
+        app_key: 'KPEHN9YyVWwVxPl34iUVIw1S',
+        placeholder: '说些什么吧ww'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -627,9 +650,9 @@
                <span id="busuanzi_container_site_uv" class="is-size-7" style="display: inline;">
                         | 访客数 <span id="busuanzi_value_site_uv"></span> 人次
                </span>
-               <!--统计建站至今日子-->
                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
                <br>
+               <!--统计建站至今日子-->
                <span id="timeDate" class="is-size-7">载入天数...</span><span id="times" class="is-size-7">载入时分秒...</span>
                 <script type="text/javascript" src="/js/dayTime.js"></script>
                 <p class="is-size-7">
