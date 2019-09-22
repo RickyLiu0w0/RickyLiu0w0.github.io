@@ -7,22 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>About Me - RickyLiu&#39;s Blog</title>
+<title>创建文章模版 - RickyLiu&#39;s Blog</title>
 
 
-    <meta name="description" content="恭喜你发现了这个秘密的地方，欢迎光临我的小小博客~">
+    <meta name="description" content="关于如何创建文章的模版">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About Me">
-<meta property="og:url" content="http://yoursite.com/2019/09/04/aboutMe/index.html">
+<meta property="og:title" content="创建文章模版">
+<meta property="og:url" content="http://yoursite.com/2019/09/22/createLayout/index.html">
 <meta property="og:site_name" content="RickyLiu&#39;s Blog">
-<meta property="og:description" content="恭喜你发现了这个秘密的地方，欢迎光临我的小小博客~">
+<meta property="og:description" content="关于如何创建文章的模版">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/gallery/aboutMe/aboutMe.png">
-<meta property="og:updated_time" content="2019-09-03T16:00:00.000Z">
+<meta property="og:image" content="http://yoursite.com/gallery/createLayout/">
+<meta property="og:updated_time" content="2019-09-22T09:38:32.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About Me">
-<meta name="twitter:description" content="恭喜你发现了这个秘密的地方，欢迎光临我的小小博客~">
-<meta name="twitter:image" content="http://yoursite.com/gallery/aboutMe/aboutMe.png">
+<meta name="twitter:title" content="创建文章模版">
+<meta name="twitter:description" content="关于如何创建文章的模版">
+<meta name="twitter:image" content="http://yoursite.com/gallery/createLayout/">
 
 
 
@@ -94,7 +95,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="About Me" height="28">
+                <img src="/images/logo.svg" alt="创建文章模版" height="28">
             
             </a>
         </div>
@@ -114,7 +115,7 @@
                 <a class="navbar-item"
                 href="/tags">Tags</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/2019/09/04/aboutMe">About</a>
                 
             </div>
@@ -139,7 +140,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/aboutMe/aboutMe.png" alt="About Me">
+            <img class="thumbnail" src="/gallery/createLayout/" alt="创建文章模版">
         </span>
     </div>
     
@@ -147,17 +148,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-04T09:57:32.000Z">2019-09-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/About-me/">About me</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-09-22T08:48:14.000Z">2019-09-22</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 269 个字)
+                    4 分钟 读完 (大约 551 个字)
                 </span>
                 
                 
@@ -166,26 +163,119 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                About Me
+                创建文章模版
             
         </h1>
         <div class="content">
-            <p>恭喜你发现了这个秘密的地方，欢迎光临我的小小博客~</p>
+            <p>关于如何创建文章的模版</p>
 <a id="more"></a>
 
-<p>本人</p>
-<ul>
-<li>SCUT大学生</li>
-<li>在读软件工程</li>
-<li>C++/ JAVA 掌握的还行</li>
-<li>会一些 Python / HTML  / JavaScript</li>
-<li>想再学习多几门语言，并做一些项目出来，目前我这方面还是太弱了X</li>
-<li>体育不太过关，要加强锻炼。<strong>一定要！！</strong></li>
-<li>关注 萌萌的动物/小动物/Furry</li>
-</ul>
-<p>我打算弄这个博客呢，一方面打算联系一下自己的HTML语言和 JavaScript语言，另一方面想记录一下自己的学习笔记还有一些问题的解决方法。我的电脑是Mac， 而网上关于Mac电脑的问题解决方法有可能比Window的难找一点，所以想写一点东西在这里方面自己查阅。如果发现了什么错误或者有什么建议，欢迎指出，若在我能力范围之内，也会回复哒～～</p>
-<p>这也是我第一篇博客呢ww</p>
+<h3 id="使用HEXO提供的默认模版"><a href="#使用HEXO提供的默认模版" class="headerlink" title="使用HEXO提供的默认模版"></a>使用HEXO提供的默认模版</h3><p>创建文章的时候，我们通常使用命令</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;文章名&gt;</span><br></pre></td></tr></table></figure>
 
+<p>此处的文章名字，即是<code>.md</code>文件的文件名，当然也是在网页上URL处显示的链接名。例如，这篇文章假如用了命令<code>hexo new createLayout</code>，那么，你可以看看上面的地址栏，最后显示的就是<code>createLayout.html</code>。这是创建一篇文章最简单的一种方法。</p>
+<h3 id="HEXO提供的模版"><a href="#HEXO提供的模版" class="headerlink" title="HEXO提供的模版"></a>HEXO提供的模版</h3><p>上述命令的详细版是：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [模版名] &lt;文章名&gt;</span><br></pre></td></tr></table></figure>
+
+<p>hexo提供了一下三种模版:</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">描述</th>
+<th align="center">保存文件的路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">post</td>
+<td align="center">新建一篇文章</td>
+<td align="center">source/_posts</td>
+</tr>
+<tr>
+<td align="center">page</td>
+<td align="center">新建一页</td>
+<td align="center">source</td>
+</tr>
+<tr>
+<td align="center">draft</td>
+<td align="center">新建草稿</td>
+<td align="center">source/_draft</td>
+</tr>
+</tbody></table>
+<p>默认使用的是<code>post</code>布局模版。在创他们三者的时候，会分别保存在不同的地址路径。但是，如果是我们自定义的模版布局，在创建新文件的时候，都在<code>source/_posts</code>之下。</p>
+<h3 id="自定义模版布局"><a href="#自定义模版布局" class="headerlink" title="自定义模版布局"></a>自定义模版布局</h3><p>当我们打开<code>scaffolds</code>文件夹之后，我们会惊奇地发现里面安静地躺这三个文件：<code>draft.md</code>，<code>page.md</code>，<code>post.md</code>。没错，我们找到了放模版布局的地方。这时，我们只需要创建一个<code>&lt;模版名&gt;.md</code>文件，编辑它，就可以创建我们的模版了。</p>
+<h4 id="模版组成"><a href="#模版组成" class="headerlink" title="模版组成"></a>模版组成</h4><p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，其使用<code>YAML</code>语法用于指定个别文件的变量，举例来说：</p>
+<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">---</span></span><br><span class="line"><span class="hljs-attr">title:</span> <span class="hljs-string">&#123;&#123;</span> <span class="hljs-string">title</span> <span class="hljs-string">&#125;&#125;</span></span><br><span class="line"><span class="hljs-attr">date:</span> <span class="hljs-string">&#123;&#123;</span> <span class="hljs-string">date</span> <span class="hljs-string">&#125;&#125;</span></span><br><span class="line"><span class="hljs-attr">tags:</span></span><br><span class="line"><span class="hljs-meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>其他变量如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>layout</td>
+<td>布局</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>建立日期</td>
+<td>文件建立日期</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>更新日期</td>
+<td>文件更新日期</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>开启文章的评论功能</td>
+<td>true</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>标签（不适用于分页）</td>
+<td></td>
+</tr>
+<tr>
+<td>categories</td>
+<td>分类（不适用于分页）</td>
+<td></td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>覆盖文章网址</td>
+<td></td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>仅用于 meta 标签和 Open Graph 的关键词（不推荐使用）</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>要使用的时候，用命令</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [模版名] &lt;文章名&gt;</span><br></pre></td></tr></table></figure>
+
+<p>就可以啦～</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/hexo/">hexo</a>
+                </div>
+            </div>
         </div>
         
         
@@ -200,13 +290,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/05/Favorites/">
-                <i class="level-item fas fa-chevron-left"></i>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/05/Favorites/">
                 <span class="level-item">Favorites</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>
@@ -692,7 +782,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="About Me" height="28">
+                    <img src="/images/logo.svg" alt="创建文章模版" height="28">
                 
                 </a>
                 <!--不蒜子统计平台-->
