@@ -20,7 +20,7 @@
 <meta property="og:description" content="如果在屋子里有Wi-Fi信号无法覆盖的地方，同时我们又有一台闲置的路由器，那么我们可以将这两个路由器连接起来，并将闲置的路由器放在需要无线网络覆盖的地方。这样，就可以实现同一个SSID账号和同一个密码，覆盖整个屋子的无线网啦！">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://rickyliu0w0.github.io/gallery/用两个路由器扩展无线网络范围/cover.png">
-<meta property="og:updated_time" content="2019-12-22T14:36:17.091Z">
+<meta property="og:updated_time" content="2019-12-23T04:16:38.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用两个路由器扩张无线网络范围">
 <meta name="twitter:description" content="如果在屋子里有Wi-Fi信号无法覆盖的地方，同时我们又有一台闲置的路由器，那么我们可以将这两个路由器连接起来，并将闲置的路由器放在需要无线网络覆盖的地方。这样，就可以实现同一个SSID账号和同一个密码，覆盖整个屋子的无线网啦！">
@@ -117,7 +117,7 @@
                 href="/tags">Tags</a>
                 
                 <a class="navbar-item"
-                href="/2019-09-04--aboutMe.html">About</a>
+                href="/article/2019-09-04--aboutMe.html">About</a>
                 
             </div>
             
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 621 个字)
+                    6 分钟 读完 (大约 847 个字)
                 </span>
                 
                 
@@ -178,7 +178,9 @@
 <p>首先放一张解释图，我们需要做的就是，用网线把路由器A和路由器B的局域网接口连接起来，然后设置路由器B让其同处于路由器A的局域网内，再设置不自动分配DHCP，最后把路由器B的SSID和密码均改成和路由器A一致，那就基本实现本文一开始所阐述的功能了。</p>
 <p><img src="/gallery/%E7%94%A8%E4%B8%A4%E4%B8%AA%E8%B7%AF%E7%94%B1%E5%99%A8%E6%89%A9%E5%B1%95%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%8C%83%E5%9B%B4/explanation.png" alt="解释图"></p>
 <ol>
-<li>首先把A路由器连接至外网，再把路由器A和路由器B用网线将下面两个黄色底的插口连接起来。<strong>注意：连接的都是局域网接口</strong></li>
+<li><p>首先把A路由器连接至外网，再把路由器A和路由器B用网线将下面两个黄色底的插口连接起来。</p>
+<p><strong>注意：连接的都是局域网接口</strong>。</p>
+</li>
 </ol>
 <p><img src="/gallery/%E7%94%A8%E4%B8%A4%E4%B8%AA%E8%B7%AF%E7%94%B1%E5%99%A8%E6%89%A9%E5%B1%95%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%8C%83%E5%9B%B4/combine.png" alt="物理连接"></p>
 <ol start="2">
@@ -190,10 +192,21 @@
 </ol>
 <p><img src="/gallery/%E7%94%A8%E4%B8%A4%E4%B8%AA%E8%B7%AF%E7%94%B1%E5%99%A8%E6%89%A9%E5%B1%95%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%8C%83%E5%9B%B4/B_router_config.png" alt="路由器B配置"></p>
 <ol start="4">
-<li>关闭路由器B的DHCP服务</li>
+<li>关闭路由器B的DHCP服务。</li>
 </ol>
 <p><img src="/gallery/%E7%94%A8%E4%B8%A4%E4%B8%AA%E8%B7%AF%E7%94%B1%E5%99%A8%E6%89%A9%E5%B1%95%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%8C%83%E5%9B%B4/B_router_DHCP.png" alt="关闭路由器B的DHCP服务"></p>
-<p>——————————————-未完待续——————————————-</p>
+<p><mark><strong>*以上及以下过程可能需要重启录路由器，重启之后要用路由器B新的IP地址来访问路由器B的管理页面。*</strong></mark></p>
+<ol start="5">
+<li><p>将路由器B的SSID和密码均配置成与路由器A一致。</p>
+<p><strong>注意：这里的信道最好与路由器A的信道相隔5个以上，以防干扰。</strong></p>
+</li>
+</ol>
+<p><img src="/gallery/%E7%94%A8%E4%B8%A4%E4%B8%AA%E8%B7%AF%E7%94%B1%E5%99%A8%E6%89%A9%E5%B1%95%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%8C%83%E5%9B%B4/B_router_name.png" alt="配置路由器B的SSID"></p>
+<p><img src="/gallery/%E7%94%A8%E4%B8%A4%E4%B8%AA%E8%B7%AF%E7%94%B1%E5%99%A8%E6%89%A9%E5%B1%95%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E8%8C%83%E5%9B%B4/B_router_password.png" alt="配置路由器B的密码"></p>
+<ol start="6">
+<li>最好保存设置，重启路由器，就可以啦～</li>
+</ol>
+<p>其实，要用多个路由器扩展的话，可以以此类推，记住只有一个路由器开启DHCP服务，其他都关闭，距离近的路由器信道相差5个以上。</p>
 
         </div>
         
