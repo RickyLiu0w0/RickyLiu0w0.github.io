@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<meta name="google-site-verification" content="4vlatwR4TRNTaomySRO3a7o7iXEdCbut1IirhEHCqCs" />
+<title>Kali上的Mutilldae靶机搭建 - RickyLiu&#39;s Blog</title>
+
+
+    <meta name="description" content="本文讲述在kali linux系统上部署Mutilldae靶机。">
+<meta name="keywords" content="Kali Linux,Mutilldae">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kali上的Mutilldae靶机搭建">
+<meta property="og:url" content="https://RickyLiu0w0.github.io/article/2022-01-20--mutilldae.html">
+<meta property="og:site_name" content="RickyLiu&#39;s Blog">
+<meta property="og:description" content="本文讲述在kali linux系统上部署Mutilldae靶机。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://rickyliu0w0.github.io/gallery/mutilldae/cover.png">
+<meta property="og:updated_time" content="2022-01-20T08:19:39.448Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kali上的Mutilldae靶机搭建">
+<meta name="twitter:description" content="本文讲述在kali linux系统上部署Mutilldae靶机。">
+<meta name="twitter:image" content="https://rickyliu0w0.github.io/gallery/mutilldae/cover.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+    <!--浏览器标题变化-->
+    <script type="text/javascript" src="/js/funnyTitle.js"></script>
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Kali上的Mutilldae靶机搭建" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/article/2019-09-04--aboutMe.html">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/mutilldae/cover.png" alt="Kali上的Mutilldae靶机搭建">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2022-01-20T06:16:03.000Z">2022-01-20</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 分钟 读完 (大约 694 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Kali上的Mutilldae靶机搭建
+            
+        </h1>
+        <div class="content">
+            <p>本文讲述在kali linux系统上部署Mutilldae靶机。</p>
+<a id="more"></a>
+
+<h2 id="Mutilldae-简介"><a href="#Mutilldae-简介" class="headerlink" title="Mutilldae 简介"></a>Mutilldae 简介</h2><blockquote>
+<p>OWASP Mutillidae II is a free, open-source, deliberately vulnerable web application providing a target for web-security enthusiasts. Mutillidae can be installed on Linux and Windows using LAMP, WAMP, and XAMMP. It is pre-installed on SamuraiWTF and OWASP BWA. The existing version can be updated on these platforms. With dozens of vulnerabilities and hints to help the user; this is an easy-to-use web hacking environment designed for labs, security enthusiast, classrooms, CTF, and vulnerability assessment tool targets. Mutillidae has been used in graduate security courses, corporate web sec training courses, and as an “assess the assessor” target for vulnerability assessment software.</p>
+</blockquote>
+<p>OWASP Mutillidae II 是一个免费、开源、故意做成易受攻击的web应用程序，它为Web安全爱好者提供了目标。Mutillidae可以通过LAMP, WAMP，和XAMMP安装在Linux和Windows系统上。SamuraiWTF和OWASP BWA已经预安装了该应用。现在的版本可以在上述平台上更新。Mutillidae拥有十几种漏洞和提示来帮助用户，是一个易于使用的网络黑客环境，专为实验室、安全爱好者、教室、CTF 和漏洞评估工具目标而设计。Mutillidae 已被用于研究生安全课程、企业网络安全培训课程，并作为漏洞评估软件的“评估者”靶机。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>提前安装好Kali Linux系统</p>
+<h2 id="XAMMP安装"><a href="#XAMMP安装" class="headerlink" title="XAMMP安装"></a>XAMMP安装</h2><ol>
+<li><p>下载XAMPP，<a href="https://www.apachefriends.org/download.html" target="_blank" rel="noopener">点击此处下载网址</a>。</p>
+</li>
+<li><p>下载完成后，对下载文件赋予执行权限</p>
+</li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x xampp-linux-X64-7.4.27-1-installer.run <span class="hljs-comment"># 赋予运行权限</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>执行GUI安装过程，默认安装目录<code>/opt/lampp</code></li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./xampp-linux-X64-7.4.27-1-installer.run</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mutilldae安装"><a href="#Mutilldae安装" class="headerlink" title="Mutilldae安装"></a>Mutilldae安装</h2><ol>
+<li><p>在github上下载<code>mutilldae</code>，<a href="https://github.com/webpwnized/mutillidae" target="_blank" rel="noopener">github网页</a>。</p>
+</li>
+<li><p>解压文件，移至<code>/opt/lampp/htdocs</code>目录下，并命名为<code>mutilldae</code>。</p>
+</li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unzip mutitLidae-master.zip -d /opt/lampp/htdocs <span class="hljs-comment"># (解压文件到指定目录)</span></span><br><span class="line"><span class="hljs-built_in">cd</span> /opt/lampp/htdocs</span><br><span class="line">mv mutitLidae-master mutilldae <span class="hljs-comment"># 修改文件名</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>启动服务</li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/lampp/lampp start</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>修改数据库用户密码</li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /opt/lampp/bin/mysqladmin --user=root password <span class="hljs-string">"root"</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>设置Mutilldae中的数据库登录参数</li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /opt/lampp/htdocs/mutillidae/includes/database-config.inc</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 将数据库密码配置修改成第4步中对应的密码</span></span><br><span class="line">define(<span class="hljs-string">'DB PASSWORD'</span>, <span class="hljs-string">'root'</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>修改为可以通过局域网访问</li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /opt/ampp/htdocs/mutillidae/.htaccess</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## This is to allow access from other machines on Virtual Box host-only networks</span></span><br><span class="line">AlLow from 10.211.55.0/24 <span class="hljs-comment"># 当然这里是根据自己的局域网特点设置的</span></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>由于修改了配置文件，稳一手重启一下服务</li>
+</ol>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/lampp/lampp restart</span><br></pre></td></tr></table></figure>
+
+<p>接下里局域网内的浏览器都可通过<code>http://10.211.55.6/mutillidae/</code>访问靶机。<code>10.211.55.6</code>为我局域网中靶机的ip地址，需要视实际情况而定。第一次打开需要点击网页上的<code>reset DB</code>初始化数据库。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Kali-Linux/">Kali Linux</a>, <a class="has-link-grey -link" href="/tags/Mutilldae/">Mutilldae</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/article/2022-01-29--Counter-Strike-Global-Offensive-Dedicated-Servers.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">CS:GO私人服务器</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/article/2020-03-27--虚拟机代理.html">
+                <span class="level-item">虚拟机代理</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'EwRUG1WzFm85cuPtIazRnduf-9Nh9j0Va',
+        app_key: 'xrTwmuGTAUU84cUVshAq9iKD',
+        placeholder: '说些什么吧ww'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img  src="/images/avatar.png" alt="Ricky Liu">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Ricky Liu
+                    </p>
+                    
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Guangzhou, Guangdong, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/rickyliu0w0" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/rickyliu0w0">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Gitee" href="https://gitee.com/RickyLiu0w0/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="weibo" href="https://weibo.com/u/1907068542">
+                
+                <i class="fab fa-weibo"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Mutilldae-简介">
+        <span class="has-mr-6">1</span>
+        <span>Mutilldae 简介</span>
+        </a></li><li>
+        <a class="is-flex" href="#环境">
+        <span class="has-mr-6">2</span>
+        <span>环境</span>
+        </a></li><li>
+        <a class="is-flex" href="#XAMMP安装">
+        <span class="has-mr-6">3</span>
+        <span>XAMMP安装</span>
+        </a></li><li>
+        <a class="is-flex" href="#Mutilldae安装">
+        <span class="has-mr-6">4</span>
+        <span>Mutilldae安装</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">icarus</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/About-me/">
+            <span class="level-start">
+                <span class="level-item">About me</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/favorite/">
+            <span class="level-start">
+                <span class="level-item">favorite</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/CS-GO/" style="font-size: 15px;">CS:GO</a> <a href="/tags/Icarus/" style="font-size: 10px;">Icarus</a> <a href="/tags/Kali-Linux/" style="font-size: 15px;">Kali Linux</a> <a href="/tags/Mutilldae/" style="font-size: 10px;">Mutilldae</a> <a href="/tags/Parallels-Desktop/" style="font-size: 10px;">Parallels Desktop</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Sublime-Text-3/" style="font-size: 10px;">Sublime Text 3</a> <a href="/tags/automator/" style="font-size: 10px;">automator</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/net/" style="font-size: 15px;">net</a> <a href="/tags/server/" style="font-size: 15px;">server</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/article/2022-01-30--csgo-command.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/csgo-command/csgo_command.png" alt="csgo服务器相关指令">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-30T07:56:26.000Z">2022-01-30</time></div>
+                    <a href="/article/2022-01-30--csgo-command.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">csgo服务器相关指令</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2022-01-29--Counter-Strike-Global-Offensive-Dedicated-Servers.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/Counter-Strike-Global-Offensive-Dedicated-Servers/csgo_server.png" alt="CS:GO私人服务器">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-29T11:45:50.000Z">2022-01-29</time></div>
+                    <a href="/article/2022-01-29--Counter-Strike-Global-Offensive-Dedicated-Servers.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">CS:GO私人服务器</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2022-01-20--mutilldae.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mutilldae/cover.png" alt="Kali上的Mutilldae靶机搭建">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-20T06:16:03.000Z">2022-01-20</time></div>
+                    <a href="/article/2022-01-20--mutilldae.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Kali上的Mutilldae靶机搭建</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2020-03-27--虚拟机代理.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/虚拟机代理/cover.png" alt="虚拟机代理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T13:08:43.000Z">2020-03-27</time></div>
+                    <a href="/article/2020-03-27--虚拟机代理.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">虚拟机代理</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2020-03-25--Sublime-Text3-安装主题与背景.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/Sublime-Text3-安装主题与背景/ST3.png" alt="Sublime Text3 安装主题与背景">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-25T14:25:23.000Z">2020-03-25</time></div>
+                    <a href="/article/2020-03-25--Sublime-Text3-安装主题与背景.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Sublime Text3 安装主题与背景</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CS-GO/">
+                        <span class="tag">CS:GO</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Icarus/">
+                        <span class="tag">Icarus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Kali-Linux/">
+                        <span class="tag">Kali Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mutilldae/">
+                        <span class="tag">Mutilldae</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Parallels-Desktop/">
+                        <span class="tag">Parallels Desktop</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sublime-Text-3/">
+                        <span class="tag">Sublime Text 3</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/automator/">
+                        <span class="tag">automator</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/net/">
+                        <span class="tag">net</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/server/">
+                        <span class="tag">server</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/article/2022-01-30--csgo-command.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/csgo-command/csgo_command.png" alt="csgo服务器相关指令">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-30T07:56:26.000Z">2022-01-30</time></div>
+                    <a href="/article/2022-01-30--csgo-command.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">csgo服务器相关指令</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2022-01-29--Counter-Strike-Global-Offensive-Dedicated-Servers.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/Counter-Strike-Global-Offensive-Dedicated-Servers/csgo_server.png" alt="CS:GO私人服务器">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-29T11:45:50.000Z">2022-01-29</time></div>
+                    <a href="/article/2022-01-29--Counter-Strike-Global-Offensive-Dedicated-Servers.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">CS:GO私人服务器</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2022-01-20--mutilldae.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mutilldae/cover.png" alt="Kali上的Mutilldae靶机搭建">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-01-20T06:16:03.000Z">2022-01-20</time></div>
+                    <a href="/article/2022-01-20--mutilldae.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Kali上的Mutilldae靶机搭建</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2020-03-27--虚拟机代理.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/虚拟机代理/cover.png" alt="虚拟机代理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-27T13:08:43.000Z">2020-03-27</time></div>
+                    <a href="/article/2020-03-27--虚拟机代理.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">虚拟机代理</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/article/2020-03-25--Sublime-Text3-安装主题与背景.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/Sublime-Text3-安装主题与背景/ST3.png" alt="Sublime Text3 安装主题与背景">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-25T14:25:23.000Z">2020-03-25</time></div>
+                    <a href="/article/2020-03-25--Sublime-Text3-安装主题与背景.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Sublime Text3 安装主题与背景</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CS-GO/">
+                        <span class="tag">CS:GO</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Icarus/">
+                        <span class="tag">Icarus</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Kali-Linux/">
+                        <span class="tag">Kali Linux</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Mutilldae/">
+                        <span class="tag">Mutilldae</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Parallels-Desktop/">
+                        <span class="tag">Parallels Desktop</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Sublime-Text-3/">
+                        <span class="tag">Sublime Text 3</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/automator/">
+                        <span class="tag">automator</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/net/">
+                        <span class="tag">net</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/server/">
+                        <span class="tag">server</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Kali上的Mutilldae靶机搭建" height="28">
+                
+                </a>
+                <!--不蒜子统计平台-->
+                <span id="busuanzi_container_site_pv" class="is-size-7" style="display: inline;">
+                        总访问量 <span id="busuanzi_value_site_pv"></span> 次
+               </span>
+               <span id="busuanzi_container_site_uv" class="is-size-7" style="display: inline;">
+                        | 访客数 <span id="busuanzi_value_site_uv"></span> 人次
+               </span>
+               <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+               <br>
+               <!--统计建站至今日子-->
+               <span id="timeDate" class="is-size-7">载入天数...</span><span id="times" class="is-size-7">载入时分秒...</span>
+                <script type="text/javascript" src="/js/dayTime.js"></script>
+                <p class="is-size-7">
+                &copy; 2022 Ricky Liu&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="is-size-5">
+                    
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
