@@ -19,7 +19,7 @@
 <meta property="og:description" content="rsync 文件同步命令使用">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://rickyliu0w0.github.io/gallery/rsync/rsync.png">
-<meta property="og:updated_time" content="2022-03-12T02:46:14.266Z">
+<meta property="og:updated_time" content="2022-03-12T08:21:40.792Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rsycn的使用">
 <meta name="twitter:description" content="rsync 文件同步命令使用">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    24 分钟 读完 (大约 3555 个字)
+                    27 分钟 读完 (大约 3977 个字)
                 </span>
                 
                 
@@ -302,11 +302,33 @@
 <p><strong>注意–delete要慎用！！！</strong>我试过因为路径没写好的问题删了自己本地的一堆文件，幸好git救了我。血的教训啊！</p>
 <h2 id="六、OPTION参数说明"><a href="#六、OPTION参数说明" class="headerlink" title="六、OPTION参数说明"></a>六、OPTION参数说明</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">-v：显示rsync过程中详细信息。可以使用&quot;-vvvv&quot;获取更详细信息。</span><br><span class="line">-P：显示文件传输的进度信息。(实际上&quot;-P&quot;=&quot;--partial --progress&quot;，其中的&quot;--progress&quot;才是显示进度信息的)。</span><br><span class="line">-n --dry-run  ：仅测试传输，而不实际传输。常和&quot;-vvvv&quot;配合使用来查看rsync是如何工作的。</span><br><span class="line">-a --archive  ：归档模式，表示递归传输并保持文件属性。等同于&quot;-rtopgDl&quot;。</span><br><span class="line">-r --recursive：递归到目录中去。</span><br><span class="line">-t --times：保持mtime属性。强烈建议任何时候都加上&quot;-t&quot;，否则目标文件mtime会设置为系统时间，导致下次更新</span><br><span class="line">          ：检查出mtime不同从而导致增量传输无效。</span><br><span class="line">-o --owner：保持owner属性(属主)。</span><br><span class="line">-g --group：保持group属性(属组)。</span><br><span class="line">-p --perms：保持perms属性(权限，不包括特殊权限)。</span><br><span class="line">-D        ：是&quot;--device --specials&quot;选项的组合，即也拷贝设备文件和特殊文件。</span><br><span class="line">-l --links：如果文件是软链接文件，则拷贝软链接本身而非软链接所指向的对象。</span><br><span class="line">-z        ：传输时进行压缩提高效率。</span><br><span class="line">-R --relative：使用相对路径。意味着将命令行中指定的全路径而非路径最尾部的文件名发送给服务端，包括它们的属性。用法见下文示例。</span><br><span class="line">--size-only ：默认算法是检查文件大小和mtime不同的文件，使用此选项将只检查文件大小。</span><br><span class="line">-u --update ：仅在源mtime比目标已存在文件的mtime新时才拷贝。注意，该选项是接收端判断的，不会影响删除行为。</span><br><span class="line">-d --dirs   ：以不递归的方式拷贝目录本身。默认递归时，如果源为&quot;dir1/file1&quot;，则不会拷贝dir1目录，使用该选项将拷贝dir1但不拷贝file1。</span><br><span class="line">--max-size  ：限制rsync传输的最大文件大小。可以使用单位后缀，还可以是一个小数值(例如：&quot;--max-size=1.5m&quot;)</span><br><span class="line">--min-size  ：限制rsync传输的最小文件大小。这可以用于禁止传输小文件或那些垃圾文件。</span><br><span class="line">--exclude   ：指定排除规则来排除不需要传输的文件。</span><br><span class="line">--delete    ：以SRC为主，对DEST进行同步。多则删之，少则补之。注意&quot;--delete&quot;是在接收端执行的，所以它是在</span><br><span class="line">            ：exclude/include规则生效之后才执行的。</span><br><span class="line">-b --backup ：对目标上已存在的文件做一个备份，备份的文件名后默认使用&quot;~&quot;做后缀。</span><br><span class="line">--backup-dir：指定备份文件的保存路径。不指定时默认和待备份文件保存在同一目录下。</span><br><span class="line">-e          ：指定所要使用的远程shell程序，默认为ssh。</span><br><span class="line">--port      ：连接daemon时使用的端口号，默认为873端口。</span><br><span class="line">--password-file：daemon模式时的密码文件，可以从中读取密码实现非交互式。注意，这不是远程shell认证的密码，而是rsync模块认证的密码。</span><br><span class="line">-W --whole-file：rsync将不再使用增量传输，而是全量传输。在网络带宽高于磁盘带宽时，该选项比增量传输更高效。</span><br><span class="line">--existing  ：要求只更新目标端已存在的文件，目标端还不存在的文件不传输。注意，使用相对路径时如果上层目录不存在也不会传输。</span><br><span class="line">--ignore-existing：要求只更新目标端不存在的文件。和&quot;--existing&quot;结合使用有特殊功能。</span><br><span class="line">--remove-source-files：要求删除源端已经成功传输的文件。</span><br></pre></td></tr></table></figure>
 
+<h2 id="七、定时忘服务器同步"><a href="#七、定时忘服务器同步" class="headerlink" title="七、定时忘服务器同步"></a>七、定时忘服务器同步</h2><h3 id="7-1-MAC-OS"><a href="#7-1-MAC-OS" class="headerlink" title="7.1 MAC OS"></a>7.1 MAC OS</h3><h4 id="7-1-1-运行cron"><a href="#7-1-1-运行cron" class="headerlink" title="7.1.1 运行cron"></a>7.1.1 运行cron</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/sbin/cron start</span><br><span class="line">sudo /usr/sbin/cron start</span><br><span class="line">sudo /usr/sbin/cron status</span><br></pre></td></tr></table></figure>
+
+<p>运行后有<code>cron: cron already running, pid: 1169</code>显示。</p>
+<h4 id="7-1-2-创建密码文件"><a href="#7-1-2-创建密码文件" class="headerlink" title="7.1.2 创建密码文件"></a>7.1.2 创建密码文件</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /tmp/rsync</span><br><span class="line">vim /tmp/rsync/rsync.password <span class="hljs-comment"># 编辑输入密码</span></span><br><span class="line">chmod 600 /tmp/rsync/rsync.password</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-1-3-创建定时任务"><a href="#7-1-3-创建定时任务" class="headerlink" title="7.1.3 创建定时任务"></a>7.1.3 创建定时任务</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 输入以下文本，rsync.exclude是提前写好的排除文件</span></span><br><span class="line">10 0 * * * <span class="hljs-built_in">cd</span> /Users/&lt;Username&gt;/Documents/lab &amp;&amp; rsync -rtvzP --delete --exclude-from=<span class="hljs-string">"rsync.exclude"</span> --password-file=<span class="hljs-string">"/tmp/rsync/rsync.password"</span> ./ lab@xxx.xxx.xxx.xxx::lab_backup/lab/ &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>保存退出，<code>crontab: installing new crontab</code>则成功加入列表。</p>
+<p><code>crontab -l</code>查看列表。</p>
+<p>语义：每天凌晨0点10分打开目标路径后执行同步服务器指令</p>
+<h3 id="7-2-Ubuntu-20-04-TLS"><a href="#7-2-Ubuntu-20-04-TLS" class="headerlink" title="7.2 Ubuntu 20.04 TLS"></a>7.2 Ubuntu 20.04 TLS</h3><h4 id="7-2-1-运行cron"><a href="#7-2-1-运行cron" class="headerlink" title="7.2.1 运行cron"></a>7.2.1 运行cron</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">安装：apt-get install cron</span><br><span class="line">启动：service cron start</span><br><span class="line">重启：service cron restart</span><br><span class="line">停止：service cron stop</span><br><span class="line">检查状态：service cron status</span><br><span class="line">查询cron可用的命令：service cron</span><br><span class="line">检查Cronta工具是否安装：crontab -l</span><br></pre></td></tr></table></figure>
+
+<p>运行后有<code>* cron is running</code>显示。</p>
+<h4 id="7-2-2-创建密码文件"><a href="#7-2-2-创建密码文件" class="headerlink" title="7.2.2 创建密码文件"></a>7.2.2 创建密码文件</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /tmp/rsync</span><br><span class="line">vim /tmp/rsync/rsync.password <span class="hljs-comment"># 编辑输入密码</span></span><br><span class="line">chmod 600 /tmp/rsync/rsync.password</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-2-3-创建定时任务"><a href="#7-2-3-创建定时任务" class="headerlink" title="7.2.3 创建定时任务"></a>7.2.3 创建定时任务</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># 第一次使用crontab -e会提示选择编辑器，用vim.basic</span></span><br><span class="line">crontab -e </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># 输入以下文本，rsync.exclude是提前写好的排除文件</span></span><br><span class="line">10 22 * * * <span class="hljs-built_in">cd</span> /mnt/d/lab/ &amp;&amp; rsync -rtvzP --delete --exclude-from=<span class="hljs-string">"rsync.exclude"</span> --password-file=<span class="hljs-string">"/tmp/rsync/rsync.password"</span> ./ lab@XXX.XXX.XXX.XXX::lab_backup/lab/ &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>保存退出，<code>crontab: installing new crontab</code>则成功加入列表。</p>
+<p><code>crontab -l</code>查看列表。</p>
+<p>语义：每天晚上10点点10分打开目标路径后执行同步服务器</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
 <li><a href="https://blog.csdn.net/u010391029/article/details/51111987" target="_blank" rel="noopener">rsync服务器的安装与配置</a></li>
 <li><a href="https://blog.csdn.net/cneducation/article/details/4353523" target="_blank" rel="noopener">Mac OS X:升级rsync和同步应用实例</a></li>
 <li><a href="https://www.cnblogs.com/f-ck-need-u/p/7220009.html" target="_blank" rel="noopener">rsync(一)：基本命令和用法</a></li>
 <li><a href="https://stackoverflow.com/questions/63660364/how-to-full-with-all-features-acl-support-xattr-support-xxhash-library-z" target="_blank" rel="noopener">mac手动编译安装rsync</a></li>
+<li><a href="https://blog.csdn.net/longgeaisisi/article/details/90477975" target="_blank" rel="noopener">Ubuntu下crontab的安装和使用</a></li>
+<li><a href="https://www.runoob.com/linux/linux-comm-crontab.html" target="_blank" rel="noopener">Linux crontab 命令</a></li>
 </ol>
 
         </div>
@@ -567,8 +589,44 @@
         <span class="has-mr-6">6</span>
         <span>六、OPTION参数说明</span>
         </a></li><li>
-        <a class="is-flex" href="#参考资料">
+        <a class="is-flex" href="#七、定时忘服务器同步">
         <span class="has-mr-6">7</span>
+        <span>七、定时忘服务器同步</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#7-1-MAC-OS">
+        <span class="has-mr-6">7.1</span>
+        <span>7.1 MAC OS</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#7-1-1-运行cron">
+        <span class="has-mr-6">7.1.1</span>
+        <span>7.1.1 运行cron</span>
+        </a></li><li>
+        <a class="is-flex" href="#7-1-2-创建密码文件">
+        <span class="has-mr-6">7.1.2</span>
+        <span>7.1.2 创建密码文件</span>
+        </a></li><li>
+        <a class="is-flex" href="#7-1-3-创建定时任务">
+        <span class="has-mr-6">7.1.3</span>
+        <span>7.1.3 创建定时任务</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#7-2-Ubuntu-20-04-TLS">
+        <span class="has-mr-6">7.2</span>
+        <span>7.2 Ubuntu 20.04 TLS</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#7-2-1-运行cron">
+        <span class="has-mr-6">7.2.1</span>
+        <span>7.2.1 运行cron</span>
+        </a></li><li>
+        <a class="is-flex" href="#7-2-2-创建密码文件">
+        <span class="has-mr-6">7.2.2</span>
+        <span>7.2.2 创建密码文件</span>
+        </a></li><li>
+        <a class="is-flex" href="#7-2-3-创建定时任务">
+        <span class="has-mr-6">7.2.3</span>
+        <span>7.2.3 创建定时任务</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#参考资料">
+        <span class="has-mr-6">8</span>
         <span>参考资料</span>
         </a></li></ul>
         </div>
