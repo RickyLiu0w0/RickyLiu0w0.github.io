@@ -8,23 +8,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 <meta name="google-site-verification" content="4vlatwR4TRNTaomySRO3a7o7iXEdCbut1IirhEHCqCs" />
-<title>Automator - RickyLiu&#39;s Blog</title>
+<title>rsycn的使用 - RickyLiu&#39;s Blog</title>
 
 
-    <meta name="description" content="在MAC 电脑中有一个Automator（自动操作），平常我们都不经常用到它。但是，当我们想在鼠标右键的时候增加一点功能，它就发挥很大的作用了。">
-<meta name="keywords" content="automator">
+    <meta name="description" content="rsync 文件同步命令使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Automator">
-<meta property="og:url" content="https://RickyLiu0w0.github.io/article/2019-09-22--Automator.html">
+<meta property="og:title" content="rsycn的使用">
+<meta property="og:url" content="https://RickyLiu0w0.github.io/article/2022-03-11--rsync.html">
 <meta property="og:site_name" content="RickyLiu&#39;s Blog">
-<meta property="og:description" content="在MAC 电脑中有一个Automator（自动操作），平常我们都不经常用到它。但是，当我们想在鼠标右键的时候增加一点功能，它就发挥很大的作用了。">
+<meta property="og:description" content="rsync 文件同步命令使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://rickyliu0w0.github.io/gallery/Automator/automator.png">
-<meta property="og:updated_time" content="2019-09-23T14:39:33.000Z">
+<meta property="og:image" content="https://rickyliu0w0.github.io/gallery/rsync/rsync.png">
+<meta property="og:updated_time" content="2022-03-12T02:46:14.266Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Automator">
-<meta name="twitter:description" content="在MAC 电脑中有一个Automator（自动操作），平常我们都不经常用到它。但是，当我们想在鼠标右键的时候增加一点功能，它就发挥很大的作用了。">
-<meta name="twitter:image" content="https://rickyliu0w0.github.io/gallery/Automator/automator.png">
+<meta name="twitter:title" content="rsycn的使用">
+<meta name="twitter:description" content="rsync 文件同步命令使用">
+<meta name="twitter:image" content="https://rickyliu0w0.github.io/gallery/rsync/rsync.png">
 
 
 
@@ -96,7 +95,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Automator" height="28">
+                <img src="/images/logo.svg" alt="rsycn的使用" height="28">
             
             </a>
         </div>
@@ -145,7 +144,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/Automator/automator.png" alt="Automator">
+            <img class="thumbnail" src="/gallery/rsync/rsync.png" alt="rsycn的使用">
         </span>
     </div>
     
@@ -153,13 +152,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-22T13:22:30.000Z">2019-09-22</time>
+                <time class="level-item has-text-grey" datetime="2022-03-11T07:16:19.000Z">2022-03-11</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 573 个字)
+                    24 分钟 读完 (大约 3555 个字)
                 </span>
                 
                 
@@ -168,42 +167,148 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Automator
+                rsycn的使用
             
         </h1>
         <div class="content">
-            <p>在MAC 电脑中有一个Automator（自动操作），平常我们都不经常用到它。但是，当我们想在鼠标右键的时候增加一点功能，它就发挥很大的作用了。</p>
+            <p>rsync 文件同步命令使用</p>
 <a id="more"></a>
 
-<h2 id="1-增加获取文件绝对路径"><a href="#1-增加获取文件绝对路径" class="headerlink" title="1. 增加获取文件绝对路径"></a>1. 增加获取文件绝对路径</h2><h4 id="1-打开启动台-gt-找到自动操作（有可能在一个叫其他的文件夹里）"><a href="#1-打开启动台-gt-找到自动操作（有可能在一个叫其他的文件夹里）" class="headerlink" title="1. 打开启动台-&gt;找到自动操作（有可能在一个叫其他的文件夹里）"></a>1. 打开启动台-&gt;找到自动操作（有可能在一个叫<code>其他</code>的文件夹里）</h4><p><img src="/gallery/Automator/icon-automator.png" alt="自动操作应用"></p>
-<h4 id="2-点击新建文稿"><a href="#2-点击新建文稿" class="headerlink" title="2. 点击新建文稿"></a>2. 点击新建文稿</h4><p><img src="/gallery/Automator/create.png" alt="新建文稿"></p>
-<h4 id="3-双击快速操作"><a href="#3-双击快速操作" class="headerlink" title="3. 双击快速操作"></a>3. 双击快速操作</h4><p><img src="/gallery/Automator/fastOperation.png" alt="快速操作"></p>
-<h4 id="4-设置工作流程收到当前文件或文件夹，位于访达"><a href="#4-设置工作流程收到当前文件或文件夹，位于访达" class="headerlink" title="4. 设置工作流程收到当前文件或文件夹，位于访达"></a>4. 设置工作流程收到当前<code>文件或文件夹</code>，位于<code>访达</code></h4><p><img src="/gallery/Automator/finder.png" alt></p>
-<h4 id="5-在资源库中，找到拷贝到剪切板，将其拖至中间"><a href="#5-在资源库中，找到拷贝到剪切板，将其拖至中间" class="headerlink" title="5. 在资源库中，找到拷贝到剪切板，将其拖至中间"></a>5. 在<code>资源库</code>中，找到<code>拷贝到剪切板</code>，将其拖至中间</h4><p><img src="/gallery/Automator/copy.png" alt></p>
-<p><img src="/gallery/Automator/copy2.png" alt></p>
-<h4 id="6-选择保存，保存为名字拷贝路径-名字随意"><a href="#6-选择保存，保存为名字拷贝路径-名字随意" class="headerlink" title="6. 选择保存，保存为名字拷贝路径(名字随意)"></a>6. 选择保存，保存为名字<code>拷贝路径</code>(名字随意)</h4><p><img src="/gallery/Automator/save.png" alt></p>
-<h4 id="7-对文件右键，点击拷贝路径（或者是当时自己取的名字），既可以进行路径的复制了。"><a href="#7-对文件右键，点击拷贝路径（或者是当时自己取的名字），既可以进行路径的复制了。" class="headerlink" title="7. 对文件右键，点击拷贝路径（或者是当时自己取的名字），既可以进行路径的复制了。"></a>7. 对文件右键，点击<code>拷贝路径</code>（或者是当时自己取的名字），既可以进行路径的复制了。</h4><h4 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h4><p>那么这个文件放在哪了呢？在终端输入：</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open ~/Library/Services</span><br></pre></td></tr></table></figure>
+<h2 id="一、rsync介绍"><a href="#一、rsync介绍" class="headerlink" title="一、rsync介绍"></a>一、rsync介绍</h2><blockquote>
+<p>Rsync（remote synchronize）是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件，也可以使用 Rsync 同步本地硬盘中的不同目录。</p>
+<p>Rsync 是用于取代rcp的一个工具，Rsync使用所谓的 “Rsync 算法” 来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。您可以参考 <a href="http://rsync.samba.org/how-rsync-works.html" target="_blank" rel="noopener">How Rsync Works A Practical Overview</a> 进一步了解 rsync 的运作机制。</p>
+<p>Rsync 的初始作者是 Andrew Tridgell 和 Paul Mackerras，它当前由<a href="http://rsync.samba.org" target="_blank" rel="noopener">http://rsync.samba.org</a>维护。</p>
+<p>Rsync的基本特点如下：</p>
+<ol>
+<li>可以镜像保存整个目录树和文件系统；</li>
+<li>可以很容易做到保持原来文件的权限、时间、软硬链接等；</li>
+<li>无须特殊权限即可安装；</li>
+<li>优化的流程，文件传输效率高；</li>
+<li>可以使用rcp、ssh等方式来传输文件，当然也可以通过直接的socket连接；</li>
+<li>支持匿名传输，以方便进行网站镜像。</li>
+</ol>
+<p>在使用<code>rsync</code>进行远程同步时，可以使用两种方式：远程<code>Shell</code>方式（建议使用<code>ssh</code>，用户验证由 ssh 负责）和<code>C/S</code>方式（即客户连接远程<code>rsync</code>服务器，用户验证由<code>rsync</code>服务器负责）。</p>
+<p>无论本地同步目录还是远程同步数据，首次运行时将会把全部文件拷贝一次，以后再运行时将只拷贝有变化的文件（对于新文件）或文件的变化部分（对于原有文件）。</p>
+<p><code>rsync</code>在首次复制时没有速度优势，速度不如<code>tar</code>，因此当数据量很大时您可以考虑先使用<code>tar</code>进行首次复制，然后再使用<code>rsync</code>进行数据同步。</p>
+</blockquote>
+<h2 id="二、服务器信息"><a href="#二、服务器信息" class="headerlink" title="二、服务器信息"></a>二、服务器信息</h2><p>腾讯云轻量应用服务器</p>
+<ul>
+<li>CPU：2核</li>
+<li>内存：4G</li>
+<li>外存：SSD 80G</li>
+<li>带宽：8M</li>
+<li>流量：1200G/月（只算出流量）</li>
+<li>系统：Ubuntu 20.04.3 LTS</li>
+</ul>
+<h2 id="三、服务器安装服务"><a href="#三、服务器安装服务" class="headerlink" title="三、服务器安装服务"></a>三、服务器安装服务</h2><p>通常来说服务器都自带了<code>rsync</code>服务，可使用<code>rsycn --version</code>命令检测软件是否纯在，如没有可使用如下命令安装。</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install rsync</span><br></pre></td></tr></table></figure>
 
-<p>就可以在里面找到啦，不想用这个功能的话把它扔去垃圾桶就可以了。</p>
-<h2 id="2-以特定文本编辑器打开文件夹"><a href="#2-以特定文本编辑器打开文件夹" class="headerlink" title="2. 以特定文本编辑器打开文件夹"></a>2. 以特定文本编辑器打开文件夹</h2><h4 id="1-打开启动台-gt-找到自动操作（有可能在一个叫其他的文件夹里）-1"><a href="#1-打开启动台-gt-找到自动操作（有可能在一个叫其他的文件夹里）-1" class="headerlink" title="1. 打开启动台-&gt;找到自动操作（有可能在一个叫其他的文件夹里）"></a>1. 打开启动台-&gt;找到自动操作（有可能在一个叫<code>其他</code>的文件夹里）</h4><p><img src="/gallery/Automator/icon-automator.png" alt="自动操作应用"></p>
-<h4 id="2-点击新建文稿-1"><a href="#2-点击新建文稿-1" class="headerlink" title="2. 点击新建文稿"></a>2. 点击新建文稿</h4><p><img src="/gallery/Automator/create.png" alt="新建文稿"></p>
-<h4 id="3-双击快速操作-1"><a href="#3-双击快速操作-1" class="headerlink" title="3. 双击快速操作"></a>3. 双击快速操作</h4><p><img src="/gallery/Automator/fastOperation.png" alt="快速操作"></p>
-<h4 id="4-设置工作流程收到当前文件或文件夹，位于访达-1"><a href="#4-设置工作流程收到当前文件或文件夹，位于访达-1" class="headerlink" title="4. 设置工作流程收到当前文件或文件夹，位于访达"></a>4. 设置工作流程收到当前<code>文件或文件夹</code>，位于<code>访达</code></h4><p><img src="/gallery/Automator/finder.png" alt></p>
-<h4 id="5-在变量中找到位置，将其中的路径拖至工作区"><a href="#5-在变量中找到位置，将其中的路径拖至工作区" class="headerlink" title="5. 在变量中找到位置，将其中的路径拖至工作区"></a>5. 在<code>变量</code>中找到<code>位置</code>，将其中的路径拖至工作区</h4><p><img src="/gallery/Automator/getValue.png" alt></p>
-<h4 id="6-在资源库中找到运行Shell脚本，拖至工作区，并将传递输入的属性改成作为自变量"><a href="#6-在资源库中找到运行Shell脚本，拖至工作区，并将传递输入的属性改成作为自变量" class="headerlink" title="6. 在资源库中找到运行Shell脚本，拖至工作区，并将传递输入的属性改成作为自变量"></a>6. 在<code>资源库</code>中找到<code>运行Shell脚本</code>，拖至工作区，并将传递输入的属性改成<code>作为自变量</code></h4><p><img src="/gallery/Automator/shell.png" alt></p>
-<h4 id="7-在编辑框输入："><a href="#7-在编辑框输入：" class="headerlink" title="7. 在编辑框输入："></a>7. 在编辑框输入：</h4><figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">如果想用Sublime Text打开文件夹，输入下行</span></span><br><span class="line">open $1 -a Sublime\ Text</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">如果想用Visual Studio Code打开文件夹，输入下行</span></span><br><span class="line">open $1 -a Visual\ Studio\ Code </span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#</span><span class="hljs-bash">一般地</span></span><br><span class="line">open $1 -a &lt;你想用来打开文件夹的文本编辑器名字&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="四、rsync启动配置"><a href="#四、rsync启动配置" class="headerlink" title="四、rsync启动配置"></a>四、rsync启动配置</h2><h3 id="4-1-写配置文件"><a href="#4-1-写配置文件" class="headerlink" title="4.1 写配置文件"></a>4.1 写配置文件</h3><ul>
+<li>首先要选择服务器启动方式<ul>
+<li>对于负荷较重的<code>rsync</code>服务器应该使用独立运行方式</li>
+<li>对于负荷较轻的<code>rsync</code>服务器可以使用<code>xinetd</code>运行方式</li>
+</ul>
+</li>
+<li>创建配置文件<code>rsyncd.conf</code></li>
+<li>对于非匿名访问的<code>rsync</code>服务器还要创建认证口令文件</li>
+</ul>
+<h3 id="4-2-以xinetd方式启动"><a href="#4-2-以xinetd方式启动" class="headerlink" title="4.2 以xinetd方式启动"></a>4.2 以<code>xinetd</code>方式启动</h3><blockquote>
+<p>xinetd是一个超级守护进程</p>
+<p>xinetd即extended internet daemon，xinetd是新一代的网络守护进程服务程序，又叫超级Internet服务器。经常用来管理多种轻量级Internet服务。</p>
+<p>xinetd提供类似于inetd+tcp_wrapper的功能，但是更加强大和安全。</p>
+</blockquote>
+<p style="background: rgba(66,185,131,.1); border-radius: 2px; padding: 1rem">本服务器采用的启用方式</p>
 
-<h4 id="8-保存，给它一个新的名字。接下来右键的服务中就能找到它啦。"><a href="#8-保存，给它一个新的名字。接下来右键的服务中就能找到它啦。" class="headerlink" title="8. 保存，给它一个新的名字。接下来右键的服务中就能找到它啦。"></a>8. 保存，给它一个新的名字。接下来右键的<code>服务</code>中就能找到它啦。</h4>
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/automator/">automator</a>
-                </div>
-            </div>
+<h4 id="4-2-1-安装xinetd"><a href="#4-2-1-安装xinetd" class="headerlink" title="4.2.1 安装xinetd"></a>4.2.1 安装xinetd</h4><p>如果在<code>/etc/</code>下没有<code>xinetd.d</code>目录，则没安装<code>xinetd</code>，需要执行一下命令安装。</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xinetd</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-2-配置xinetd使rsync开始工作"><a href="#4-2-2-配置xinetd使rsync开始工作" class="headerlink" title="4.2.2 配置xinetd使rsync开始工作"></a>4.2.2 配置xinetd使rsync开始工作</h4><p>安装完毕后，创建<code>/etc/xinetd.d/rsync</code>配置文件，并且编辑</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo touch /etc/xinetd.d/rsync</span><br><span class="line">sudo vim /etc/xinetd.d/rsync</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">service rsync</span><br><span class="line">&#123;</span><br><span class="line">    disable         = no</span><br><span class="line">    socket_type     = stream</span><br><span class="line">    wait            = no</span><br><span class="line">    user            = root</span><br><span class="line"></span><br><span class="line">    # 放置rsync软件的具体位置</span><br><span class="line">    server          = /usr/bin/rsync</span><br><span class="line"></span><br><span class="line">    server_args     = --daemon</span><br><span class="line">    log_on_failure  += USERID</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>:wq</code>退出保存。</p>
+<h4 id="4-2-3-启动rsync作为使用xinetd的守护进程"><a href="#4-2-3-启动rsync作为使用xinetd的守护进程" class="headerlink" title="4.2.3 启动rsync作为使用xinetd的守护进程"></a>4.2.3 启动rsync作为使用xinetd的守护进程</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/rsync</span><br></pre></td></tr></table></figure>
+
+<p><img src="/gallery/rsync/default_rsync.png" alt="rsync默认配置"></p>
+<p>主要修改：RSYNC ENABLE=inetd，使用xinetd启用</p>
+<h4 id="4-2-4-添加专门管理备份文件夹目录的用户rsyncAdmin"><a href="#4-2-4-添加专门管理备份文件夹目录的用户rsyncAdmin" class="headerlink" title="4.2.4 添加专门管理备份文件夹目录的用户rsyncAdmin"></a>4.2.4 添加专门管理备份文件夹目录的用户rsyncAdmin</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd -d /home/rsyncDir -m rsyncAdmin</span><br></pre></td></tr></table></figure>
+
+<p>这样就在home目录生成rsyncDir，并且由rsyncAdmin管理。</p>
+<h4 id="4-2-5-创建-etc-rsync-rsyncd-conf-配置rsync使其在"><a href="#4-2-5-创建-etc-rsync-rsyncd-conf-配置rsync使其在" class="headerlink" title="4.2.5 创建 /etc/rsync/rsyncd.conf  配置rsync使其在"></a>4.2.5 创建 /etc/rsync/rsyncd.conf  配置rsync使其在</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo touch /etc/rsync/rsyncd.conf</span><br><span class="line">sudo ln -s /etc/rsync/rsyncd.conf /etc/rsyncd.conf</span><br><span class="line">sudo vim /etc/rsyncd.conf</span><br></pre></td></tr></table></figure>
+
+<p>编辑里面的内容为：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"># 管理备份目录的用户</span><br><span class="line">uid = rsyncAdmin</span><br><span class="line"></span><br><span class="line"># 管理备份目录的用户组</span><br><span class="line">gid = rsyncAdmin</span><br><span class="line"></span><br><span class="line"># 安全功能，数据是否锁定到备份目录</span><br><span class="line">use chroot = yes</span><br><span class="line"></span><br><span class="line"># 并发连接，同时多少客户端访问</span><br><span class="line">max connections = 2</span><br><span class="line"></span><br><span class="line"># 超时时间。</span><br><span class="line">timeout = 600</span><br><span class="line"></span><br><span class="line"># 进程号所在文件</span><br><span class="line">pid file = /var/run/rsyncd.pid</span><br><span class="line"></span><br><span class="line"># 锁文件</span><br><span class="line">lock file = /var/run/rsyncd.lock</span><br><span class="line"></span><br><span class="line"># 日志文件，查看报错等</span><br><span class="line">log file = /var/log/rsync.log</span><br><span class="line"></span><br><span class="line"># 忽略错误</span><br><span class="line">ignore errors</span><br><span class="line"></span><br><span class="line"># 可写</span><br><span class="line">read only = false</span><br><span class="line"></span><br><span class="line"># 不允许列表</span><br><span class="line">list = false</span><br><span class="line"></span><br><span class="line"># 哪些主机可以访问。</span><br><span class="line"># hosts allow = 172.16.1.0/24</span><br><span class="line"></span><br><span class="line"># 哪些主机不允许访问。</span><br><span class="line"># hosts deny = 0.0.0.0/32</span><br><span class="line"></span><br><span class="line"># 欢迎信息</span><br><span class="line">motd file = /etc/rsyncd/rsyncd.motd</span><br><span class="line"></span><br><span class="line"># 存放密码的文件：格式：用户名:密码，权限必须600</span><br><span class="line">secrets file = /etc/rsync/rsyncd.secrets</span><br><span class="line"></span><br><span class="line"># [模块名]远程访问使用模块名访问，名字可以自己随便取</span><br><span class="line">[lab_backup]</span><br><span class="line"># 说明注释</span><br><span class="line">comment = Welcome to backup server!</span><br><span class="line"></span><br><span class="line"># 远程虚拟连接用户</span><br><span class="line">auth users = lab</span><br><span class="line"></span><br><span class="line"># 服务端用户备份的目录</span><br><span class="line">path = /home/rsyncDir/</span><br><span class="line"></span><br><span class="line"># 不压缩</span><br><span class="line">dont compress = *.gz *.tgz *.zip *.z *.rpm *.deb *.iso *.bz2 *.tbz</span><br><span class="line"></span><br><span class="line"># 排除文件</span><br><span class="line">exclude = *.Ds_Store</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-6-创建-etc-rsync-rsyncd-secrets-配置用户名和密码"><a href="#4-2-6-创建-etc-rsync-rsyncd-secrets-配置用户名和密码" class="headerlink" title="4.2.6 创建 /etc/rsync/rsyncd.secrets  配置用户名和密码."></a>4.2.6 创建 /etc/rsync/rsyncd.secrets  配置用户名和密码.</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/rsync/rsyncd.secrets</span><br></pre></td></tr></table></figure>
+
+<p>注意用以下格式命名虚拟用户名和密码</p>
+<p><code>&lt;user_name&gt;:&lt;password&gt;</code></p>
+<p>保存退出后设置好权限：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 600 /etc/rsync/rsyncd.secrets</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-7-启动"><a href="#4-2-7-启动" class="headerlink" title="4.2.7 启动"></a>4.2.7 启动</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/xinetd restart</span><br></pre></td></tr></table></figure>
+
+<p>检查是否开始监听端口：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -an | grep 873</span><br></pre></td></tr></table></figure>
+
+<p>若有信息输出且显示LISTEN，则正在监听</p>
+<p>检查是否能连接使用</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync lab@xxx.xxx.xxx.xxx::lab_backup <span class="hljs-comment"># 然后输入之前设定的密码</span></span><br></pre></td></tr></table></figure>
+
+<p>有目录列出则成功</p>
+<h4 id="4-2-8-腾讯云服务器开放端口"><a href="#4-2-8-腾讯云服务器开放端口" class="headerlink" title="4.2.8 腾讯云服务器开放端口"></a>4.2.8 腾讯云服务器开放端口</h4><p>在<code>添加规则</code>处添加873的tcp端口。</p>
+<p><img src="/gallery/rsync/port.png" alt="开放端口"></p>
+<h3 id="4-3-独立运行-rsync-服务"><a href="#4-3-独立运行-rsync-服务" class="headerlink" title="4.3 独立运行 rsync 服务"></a>4.3 独立运行 rsync 服务</h3><p>最简单的独立运行 rsync 服务的方法是执行如下的命令：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/rsync --daemon</span><br></pre></td></tr></table></figure>
+
+<p>此方式启动需要修改<code>/etc/default/rsync</code>文件，允许<code>--daemon</code>启动：</p>
+<p><code>RSYNC_ENABLE=false</code><br>改为<br><code>RSYNC_ENABLE=true</code></p>
+<p>否则在启动时报错：</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync daemon not enabled <span class="hljs-keyword">in</span> /etc/default/rsync, not starting... ... (warning).</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、客户端使用"><a href="#五、客户端使用" class="headerlink" title="五、客户端使用"></a>五、客户端使用</h2><h3 id="5-1-Mac-OS动安装rsycn"><a href="#5-1-Mac-OS动安装rsycn" class="headerlink" title="5.1 Mac OS动安装rsycn"></a>5.1 Mac OS动安装rsycn</h3><p>因为mac系统自带的rsycn版本比较古老，需要安装新一点版本的，这里采用手动编译安装的方式。</p>
+<p><strong>截止2022/3/11版本最新</strong>，若有更新版本，则需要修改下述中<code>curl</code>链接中的版本号</p>
+<p>随便打开一个工作目录，例如家目录<code>/home/User</code></p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">cd</span> ~;</span><br><span class="line">curl -OL https://github.com/Cyan4973/xxHash/archive/v0.8.0.tar.gz;</span><br><span class="line">tar -xvf v0.8.0.tar.gz;</span><br><span class="line"><span class="hljs-built_in">cd</span> xxHash-0.8.0;</span><br><span class="line">make -j4;</span><br><span class="line">sudo make install;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cd</span> ~;</span><br><span class="line">curl -OL https://github.com/lz4/lz4/archive/v1.9.3.tar.gz;</span><br><span class="line">tar -xvf v1.9.3.tar.gz;</span><br><span class="line"><span class="hljs-built_in">cd</span> lz4-1.9.3;</span><br><span class="line">make -j4;</span><br><span class="line">sudo make install;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cd</span> ~;</span><br><span class="line">curl -OL https://www.openssl.org/<span class="hljs-built_in">source</span>/openssl-1.1.1k.tar.gz;</span><br><span class="line">tar -xvf openssl-1.1.1k.tar.gz;</span><br><span class="line"><span class="hljs-built_in">cd</span> openssl-1.1.1k ;</span><br><span class="line">./config; <span class="hljs-comment"># 注意这里是config</span></span><br><span class="line">make -j4;</span><br><span class="line">sudo make install;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cd</span> ~;</span><br><span class="line">curl -OL https://github.com/facebook/zstd/archive/v1.5.0.tar.gz;</span><br><span class="line">tar -xvf v1.5.0.tar.gz;</span><br><span class="line"><span class="hljs-built_in">cd</span> zstd-1.5.0 ;</span><br><span class="line">make -j4;</span><br><span class="line">sudo make install;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">cd</span> ~;</span><br><span class="line">curl -OL https://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz;</span><br><span class="line">tar -xvf rsync-3.2.3.tar.gz;</span><br><span class="line"><span class="hljs-built_in">cd</span> rsync-3.2.3;</span><br><span class="line">./configure; <span class="hljs-comment"># 注意这里是configure</span></span><br><span class="line">make -j4;</span><br><span class="line">sudo make install;</span><br></pre></td></tr></table></figure>
+
+<p>软件最终安装在<code>/usr/local/bin</code>目录下，而原系统预安装的在<code>/usr/bin</code>下</p>
+<p>使用<code>/usr/local/bin/rsync --version</code>即可验证是否安装陈工</p>
+<p>为了方便直接使用rsync命令，可在<code>~/.bashrc</code>或者<code>~/.zshrc</code>加入</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">alias</span> rsync /usr/<span class="hljs-built_in">local</span>/bin/rsync</span><br></pre></td></tr></table></figure>
+
+<p>然后<code>source ~/.bashrc</code>或<code>~/.zshrc</code>。</p>
+<p>因为最后的安装脚本没有考虑到需要删除原来Mac OS X自带的<code>rsync.1 man</code>文件，所以需要删除旧版本的man文件。</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /usr/share/man/man1/rsync.1.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-Ubuntu安装rsycn"><a href="#5-2-Ubuntu安装rsycn" class="headerlink" title="5.2 Ubuntu安装rsycn"></a>5.2 Ubuntu安装rsycn</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install rsycn</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-本地“推”上服务器"><a href="#5-3-本地“推”上服务器" class="headerlink" title="5.3 本地“推”上服务器"></a>5.3 本地“推”上服务器</h3><h4 id="5-3-1-语法1："><a href="#5-3-1-语法1：" class="headerlink" title="5.3.1 语法1："></a>5.3.1 语法1：</h4><p>rsync [OPTION …] [SRC] [USER]@[HOST]::[DEST] …<br>rsync命令 参数选项 [本机路径] [虚拟用户]@[主机地址]::[模块名]…</p>
+<h4 id="5-3-2-语法2："><a href="#5-3-2-语法2：" class="headerlink" title="5.3.2 语法2："></a>5.3.2 语法2：</h4><p>rsync [OPTION …] [SRC] rsync://[USER]@[HOST]/[DEST] …<br>rsync命令 参数选项 [本地路径] rsync://[虚拟用户]@[主机地址]/[模块名]..</p>
+<h4 id="5-3-3-用法举例"><a href="#5-3-3-用法举例" class="headerlink" title="5.3.3 用法举例"></a>5.3.3 用法举例</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -avzP --delete --exclude <span class="hljs-string">"*.DS_Store"</span> . lab@175.178.73.244::lab_backup/实验室文件</span><br></pre></td></tr></table></figure>
+
+<p>注： 这个命令的意思就是说，用lab用户登录到服务器上，把当前文件夹中的数据，同步到服务器目录<code>实验室文件/</code>下。当服务器没有<code>实验室文件/</code>这个目录时，系统会自动创建一个；当存在<code>实验室文件/</code>这个目录中，要注意它的写权限。并且文件本地对服务器要完全一致（本地删了服务器也要删除对应文件），排除本地<code>*.DS_Store</code>文件。</p>
+<p>参数：</p>
+<ul>
+<li>-a 参数，相当于<code>-rlptgoD</code>，-r 是递归 -l 是链接文件，意思是拷贝链接文件；-p 表示保持文件原有权限；-t 保持文件原有时间；-g 保持文件原有用户组；-o 保持文件原有属主；-D 相当于块设备文件；</li>
+<li>-z 传输时压缩；</li>
+<li>-P 传输进度；</li>
+<li>-v 传输时的进度等信息，和-P有点关系，自己试试。可以看文档</li>
+<li>–delete 表示服务器端上的数据要与客户端完全一致</li>
+<li>–exclude “<em>.DS_Store” 排除本地`</em>.DS_Store`文件</li>
+</ul>
+<h3 id="5-4-服务器“拉”回本地"><a href="#5-4-服务器“拉”回本地" class="headerlink" title="5.4 服务器“拉”回本地"></a>5.4 服务器“拉”回本地</h3><h4 id="5-4-1-语法1："><a href="#5-4-1-语法1：" class="headerlink" title="5.4.1 语法1："></a>5.4.1 语法1：</h4><p>rsync [OPTION…] [USER@]HOST::SRC… [DEST]<br>rsync命令 参数选项 [本机路径] [虚拟用户]@[主机地址]::[模块名]…</p>
+<h4 id="5-4-2-语法2："><a href="#5-4-2-语法2：" class="headerlink" title="5.4.2 语法2："></a>5.4.2 语法2：</h4><p>rsync [OPTION…] rsync://[USER@]HOST[:PORT]/SRC… [DEST]<br>rsync命令 参数选项 [本地路径] rsync://[虚拟用户]@[主机地址]/[模块名]..</p>
+<p><strong>注意–delete要慎用！！！</strong>我试过因为路径没写好的问题删了自己本地的一堆文件，幸好git救了我。血的教训啊！</p>
+<h2 id="六、OPTION参数说明"><a href="#六、OPTION参数说明" class="headerlink" title="六、OPTION参数说明"></a>六、OPTION参数说明</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">-v：显示rsync过程中详细信息。可以使用&quot;-vvvv&quot;获取更详细信息。</span><br><span class="line">-P：显示文件传输的进度信息。(实际上&quot;-P&quot;=&quot;--partial --progress&quot;，其中的&quot;--progress&quot;才是显示进度信息的)。</span><br><span class="line">-n --dry-run  ：仅测试传输，而不实际传输。常和&quot;-vvvv&quot;配合使用来查看rsync是如何工作的。</span><br><span class="line">-a --archive  ：归档模式，表示递归传输并保持文件属性。等同于&quot;-rtopgDl&quot;。</span><br><span class="line">-r --recursive：递归到目录中去。</span><br><span class="line">-t --times：保持mtime属性。强烈建议任何时候都加上&quot;-t&quot;，否则目标文件mtime会设置为系统时间，导致下次更新</span><br><span class="line">          ：检查出mtime不同从而导致增量传输无效。</span><br><span class="line">-o --owner：保持owner属性(属主)。</span><br><span class="line">-g --group：保持group属性(属组)。</span><br><span class="line">-p --perms：保持perms属性(权限，不包括特殊权限)。</span><br><span class="line">-D        ：是&quot;--device --specials&quot;选项的组合，即也拷贝设备文件和特殊文件。</span><br><span class="line">-l --links：如果文件是软链接文件，则拷贝软链接本身而非软链接所指向的对象。</span><br><span class="line">-z        ：传输时进行压缩提高效率。</span><br><span class="line">-R --relative：使用相对路径。意味着将命令行中指定的全路径而非路径最尾部的文件名发送给服务端，包括它们的属性。用法见下文示例。</span><br><span class="line">--size-only ：默认算法是检查文件大小和mtime不同的文件，使用此选项将只检查文件大小。</span><br><span class="line">-u --update ：仅在源mtime比目标已存在文件的mtime新时才拷贝。注意，该选项是接收端判断的，不会影响删除行为。</span><br><span class="line">-d --dirs   ：以不递归的方式拷贝目录本身。默认递归时，如果源为&quot;dir1/file1&quot;，则不会拷贝dir1目录，使用该选项将拷贝dir1但不拷贝file1。</span><br><span class="line">--max-size  ：限制rsync传输的最大文件大小。可以使用单位后缀，还可以是一个小数值(例如：&quot;--max-size=1.5m&quot;)</span><br><span class="line">--min-size  ：限制rsync传输的最小文件大小。这可以用于禁止传输小文件或那些垃圾文件。</span><br><span class="line">--exclude   ：指定排除规则来排除不需要传输的文件。</span><br><span class="line">--delete    ：以SRC为主，对DEST进行同步。多则删之，少则补之。注意&quot;--delete&quot;是在接收端执行的，所以它是在</span><br><span class="line">            ：exclude/include规则生效之后才执行的。</span><br><span class="line">-b --backup ：对目标上已存在的文件做一个备份，备份的文件名后默认使用&quot;~&quot;做后缀。</span><br><span class="line">--backup-dir：指定备份文件的保存路径。不指定时默认和待备份文件保存在同一目录下。</span><br><span class="line">-e          ：指定所要使用的远程shell程序，默认为ssh。</span><br><span class="line">--port      ：连接daemon时使用的端口号，默认为873端口。</span><br><span class="line">--password-file：daemon模式时的密码文件，可以从中读取密码实现非交互式。注意，这不是远程shell认证的密码，而是rsync模块认证的密码。</span><br><span class="line">-W --whole-file：rsync将不再使用增量传输，而是全量传输。在网络带宽高于磁盘带宽时，该选项比增量传输更高效。</span><br><span class="line">--existing  ：要求只更新目标端已存在的文件，目标端还不存在的文件不传输。注意，使用相对路径时如果上层目录不存在也不会传输。</span><br><span class="line">--ignore-existing：要求只更新目标端不存在的文件。和&quot;--existing&quot;结合使用有特殊功能。</span><br><span class="line">--remove-source-files：要求删除源端已经成功传输的文件。</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://blog.csdn.net/u010391029/article/details/51111987" target="_blank" rel="noopener">rsync服务器的安装与配置</a></li>
+<li><a href="https://blog.csdn.net/cneducation/article/details/4353523" target="_blank" rel="noopener">Mac OS X:升级rsync和同步应用实例</a></li>
+<li><a href="https://www.cnblogs.com/f-ck-need-u/p/7220009.html" target="_blank" rel="noopener">rsync(一)：基本命令和用法</a></li>
+<li><a href="https://stackoverflow.com/questions/63660364/how-to-full-with-all-features-acl-support-xattr-support-xxhash-library-z" target="_blank" rel="noopener">mac手动编译安装rsync</a></li>
+</ol>
+
         </div>
         
         
@@ -218,17 +323,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/article/2019-09-24--sitemap.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Sitemap</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/article/2019-09-22--createLayout.html">
-                <span class="level-item">创建HEXO文章模版</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/article/2022-02-25--gpg-useage.html">
+                <span class="level-item">GPG的一些安装和使用</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -365,78 +463,114 @@
                 目录
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#1-增加获取文件绝对路径">
+        <a class="is-flex" href="#一、rsync介绍">
         <span class="has-mr-6">1</span>
-        <span>1. 增加获取文件绝对路径</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#1-打开启动台-gt-找到自动操作（有可能在一个叫其他的文件夹里）">
-        <span class="has-mr-6">1.1</span>
-        <span>1. 打开启动台-&gt;找到自动操作（有可能在一个叫其他的文件夹里）</span>
+        <span>一、rsync介绍</span>
         </a></li><li>
-        <a class="is-flex" href="#2-点击新建文稿">
-        <span class="has-mr-6">1.2</span>
-        <span>2. 点击新建文稿</span>
-        </a></li><li>
-        <a class="is-flex" href="#3-双击快速操作">
-        <span class="has-mr-6">1.3</span>
-        <span>3. 双击快速操作</span>
-        </a></li><li>
-        <a class="is-flex" href="#4-设置工作流程收到当前文件或文件夹，位于访达">
-        <span class="has-mr-6">1.4</span>
-        <span>4. 设置工作流程收到当前文件或文件夹，位于访达</span>
-        </a></li><li>
-        <a class="is-flex" href="#5-在资源库中，找到拷贝到剪切板，将其拖至中间">
-        <span class="has-mr-6">1.5</span>
-        <span>5. 在资源库中，找到拷贝到剪切板，将其拖至中间</span>
-        </a></li><li>
-        <a class="is-flex" href="#6-选择保存，保存为名字拷贝路径-名字随意">
-        <span class="has-mr-6">1.6</span>
-        <span>6. 选择保存，保存为名字拷贝路径(名字随意)</span>
-        </a></li><li>
-        <a class="is-flex" href="#7-对文件右键，点击拷贝路径（或者是当时自己取的名字），既可以进行路径的复制了。">
-        <span class="has-mr-6">1.7</span>
-        <span>7. 对文件右键，点击拷贝路径（或者是当时自己取的名字），既可以进行路径的复制了。</span>
-        </a></li><li>
-        <a class="is-flex" href="#Note">
-        <span class="has-mr-6">1.8</span>
-        <span>Note</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#2-以特定文本编辑器打开文件夹">
+        <a class="is-flex" href="#二、服务器信息">
         <span class="has-mr-6">2</span>
-        <span>2. 以特定文本编辑器打开文件夹</span>
+        <span>二、服务器信息</span>
+        </a></li><li>
+        <a class="is-flex" href="#三、服务器安装服务">
+        <span class="has-mr-6">3</span>
+        <span>三、服务器安装服务</span>
+        </a></li><li>
+        <a class="is-flex" href="#四、rsync启动配置">
+        <span class="has-mr-6">4</span>
+        <span>四、rsync启动配置</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#1-打开启动台-gt-找到自动操作（有可能在一个叫其他的文件夹里）-1">
-        <span class="has-mr-6">2.1</span>
-        <span>1. 打开启动台-&gt;找到自动操作（有可能在一个叫其他的文件夹里）</span>
+        <a class="is-flex" href="#4-1-写配置文件">
+        <span class="has-mr-6">4.1</span>
+        <span>4.1 写配置文件</span>
         </a></li><li>
-        <a class="is-flex" href="#2-点击新建文稿-1">
-        <span class="has-mr-6">2.2</span>
-        <span>2. 点击新建文稿</span>
+        <a class="is-flex" href="#4-2-以xinetd方式启动">
+        <span class="has-mr-6">4.2</span>
+        <span>4.2 以xinetd方式启动</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#4-2-1-安装xinetd">
+        <span class="has-mr-6">4.2.1</span>
+        <span>4.2.1 安装xinetd</span>
         </a></li><li>
-        <a class="is-flex" href="#3-双击快速操作-1">
-        <span class="has-mr-6">2.3</span>
-        <span>3. 双击快速操作</span>
+        <a class="is-flex" href="#4-2-2-配置xinetd使rsync开始工作">
+        <span class="has-mr-6">4.2.2</span>
+        <span>4.2.2 配置xinetd使rsync开始工作</span>
         </a></li><li>
-        <a class="is-flex" href="#4-设置工作流程收到当前文件或文件夹，位于访达-1">
-        <span class="has-mr-6">2.4</span>
-        <span>4. 设置工作流程收到当前文件或文件夹，位于访达</span>
+        <a class="is-flex" href="#4-2-3-启动rsync作为使用xinetd的守护进程">
+        <span class="has-mr-6">4.2.3</span>
+        <span>4.2.3 启动rsync作为使用xinetd的守护进程</span>
         </a></li><li>
-        <a class="is-flex" href="#5-在变量中找到位置，将其中的路径拖至工作区">
-        <span class="has-mr-6">2.5</span>
-        <span>5. 在变量中找到位置，将其中的路径拖至工作区</span>
+        <a class="is-flex" href="#4-2-4-添加专门管理备份文件夹目录的用户rsyncAdmin">
+        <span class="has-mr-6">4.2.4</span>
+        <span>4.2.4 添加专门管理备份文件夹目录的用户rsyncAdmin</span>
         </a></li><li>
-        <a class="is-flex" href="#6-在资源库中找到运行Shell脚本，拖至工作区，并将传递输入的属性改成作为自变量">
-        <span class="has-mr-6">2.6</span>
-        <span>6. 在资源库中找到运行Shell脚本，拖至工作区，并将传递输入的属性改成作为自变量</span>
+        <a class="is-flex" href="#4-2-5-创建-etc-rsync-rsyncd-conf-配置rsync使其在">
+        <span class="has-mr-6">4.2.5</span>
+        <span>4.2.5 创建 /etc/rsync/rsyncd.conf  配置rsync使其在</span>
         </a></li><li>
-        <a class="is-flex" href="#7-在编辑框输入：">
-        <span class="has-mr-6">2.7</span>
-        <span>7. 在编辑框输入：</span>
+        <a class="is-flex" href="#4-2-6-创建-etc-rsync-rsyncd-secrets-配置用户名和密码">
+        <span class="has-mr-6">4.2.6</span>
+        <span>4.2.6 创建 /etc/rsync/rsyncd.secrets  配置用户名和密码.</span>
         </a></li><li>
-        <a class="is-flex" href="#8-保存，给它一个新的名字。接下来右键的服务中就能找到它啦。">
-        <span class="has-mr-6">2.8</span>
-        <span>8. 保存，给它一个新的名字。接下来右键的服务中就能找到它啦。</span>
-        </a></li></ul></li></ul>
+        <a class="is-flex" href="#4-2-7-启动">
+        <span class="has-mr-6">4.2.7</span>
+        <span>4.2.7 启动</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-2-8-腾讯云服务器开放端口">
+        <span class="has-mr-6">4.2.8</span>
+        <span>4.2.8 腾讯云服务器开放端口</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#4-3-独立运行-rsync-服务">
+        <span class="has-mr-6">4.3</span>
+        <span>4.3 独立运行 rsync 服务</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#五、客户端使用">
+        <span class="has-mr-6">5</span>
+        <span>五、客户端使用</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-1-Mac-OS动安装rsycn">
+        <span class="has-mr-6">5.1</span>
+        <span>5.1 Mac OS动安装rsycn</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-2-Ubuntu安装rsycn">
+        <span class="has-mr-6">5.2</span>
+        <span>5.2 Ubuntu安装rsycn</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-3-本地“推”上服务器">
+        <span class="has-mr-6">5.3</span>
+        <span>5.3 本地“推”上服务器</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-3-1-语法1：">
+        <span class="has-mr-6">5.3.1</span>
+        <span>5.3.1 语法1：</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-3-2-语法2：">
+        <span class="has-mr-6">5.3.2</span>
+        <span>5.3.2 语法2：</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-3-3-用法举例">
+        <span class="has-mr-6">5.3.3</span>
+        <span>5.3.3 用法举例</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#5-4-服务器“拉”回本地">
+        <span class="has-mr-6">5.4</span>
+        <span>5.4 服务器“拉”回本地</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#5-4-1-语法1：">
+        <span class="has-mr-6">5.4.1</span>
+        <span>5.4.1 语法1：</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-4-2-语法2：">
+        <span class="has-mr-6">5.4.2</span>
+        <span>5.4.2 语法2：</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#六、OPTION参数说明">
+        <span class="has-mr-6">6</span>
+        <span>六、OPTION参数说明</span>
+        </a></li><li>
+        <a class="is-flex" href="#参考资料">
+        <span class="has-mr-6">7</span>
+        <span>参考资料</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -1098,7 +1232,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Automator" height="28">
+                    <img src="/images/logo.svg" alt="rsycn的使用" height="28">
                 
                 </a>
                 <!--不蒜子统计平台-->
